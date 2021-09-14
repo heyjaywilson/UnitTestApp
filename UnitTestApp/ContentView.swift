@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    let calc = Calc()
+    
+    @State private var number = 5
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            Text("The number is currently \(number)")
+                .padding(5)
+            Button(action: {
+                    number = calc.addFive(number)
+            }, label: {
+                Text("Add 5 to the Number")
+            })
+        }
     }
 }
 
